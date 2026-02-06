@@ -173,31 +173,31 @@ const CustomModal = ({ modalType, onClose, onSubmit, response }) => {
               <h2>Product Details</h2>
               <div className="full-products">
                 <div className="product-details img">
-                  <img src={response.product.imageUrl} />
+                  <img src={response?.imageUrl || ""} />
                 </div>
                 <div className="product-details-info">
                   <div className="product-details">
                     <div className="">Name :</div>
-                    <div className="">{response?.product?.product?.name}</div>
+                    <div className="">{response?.product?.name}</div>
                   </div>
                   <div className="product-details">
                     <div className="">Description :</div>
                     <div className="">
-                      {response?.product?.product?.description}
+                      {response?.product?.description}
                     </div>
                   </div>
                   <div className="product-details">
                     <div className="">price :</div>
-                    <div className="">{response?.product?.product?.price}</div>
+                    <div className="">{response?.product?.price}</div>
                   </div>
                   <div className="product-details">
                     <div className="">Stock :</div>
-                    <div className="">{response?.product?.product?.stock}</div>
+                    <div className="">{response?.product?.stock}</div>
                   </div>
                   <div className="product-details">
                     <div className="">Category :</div>
                     <div className="">
-                      {response?.product?.product?.category.categoryName}
+                      {response?.product?.category?.categoryName}
                     </div>
                   </div>
                 </div>
@@ -319,7 +319,7 @@ const CustomModal = ({ modalType, onClose, onSubmit, response }) => {
                   <div className="business-response-item">
                     <div>Total Business: ₹ </div>
                     <div>
-                      {response?.dailyBusiness?.totalBusiness?.toFixed(2)}
+                      {response?.monthlyBusiness?.totalBusiness?.toFixed(2)}
                     </div>
                   </div>
                   <div className="business-response-item">
@@ -566,13 +566,13 @@ const ModifyUserFormComponent = ({ onClose }) => {
     return (
       <form onSubmit={handleFetchUser}>
         <div className="modal-form-item">
-          <label for="user-id">User ID:</label>
+          <label htmlFor="user-id">User ID:</label>
           <input
             type="text"
             id="user-id"
             name="user-id"
             value={userId}
-            onChange={(e) => userId(e.target.value)}
+            onChange={(e) => setUserId(e.target.value)}
           />
         </div>
         <button type="submit">Get User</button>
@@ -585,17 +585,17 @@ const ModifyUserFormComponent = ({ onClose }) => {
       <div>
         <form onSubmit={handleUpdateUser} className="modal-form">
           <div className="modal-form-item">
-            <label for="user-id">User ID:</label>
+            <label htmlFor="user-id">User ID:</label>
             <input
               type="text"
               id="user-id"
               name="user-id"
-              value="17"
-              readonly
+              value={userId}
+              readOnly
             />
           </div>
           <div className="modal-form-item">
-            <label for="username">Username:</label>
+            <label htmlFor="username">Username:</label>
             <input
               type="text"
               id="username"
@@ -605,7 +605,7 @@ const ModifyUserFormComponent = ({ onClose }) => {
           </div>
 
           <div className="modal-form-item">
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
@@ -614,7 +614,7 @@ const ModifyUserFormComponent = ({ onClose }) => {
             />
           </div>
           <div className="modal-form-item">
-            <label for="role">Role:</label>
+            <label htmlFor="role">Role:</label>
             <input
               type="text"
               id="role"

@@ -8,6 +8,7 @@
   box-shadow: var(--shadow-md);
   margin-bottom: var(--spacing-xl);
   border: 1px solid var(--border-color);
+  
 }
 
 .search-section {
@@ -229,3 +230,23 @@
     width: 100%;
   }
 }
+
+.filter-label {
+  font-size: 1.25rem;                /* Larger size for title */
+  font-weight: 600;                  /* Slightly bold for emphasis */
+  margin-bottom: 12px;               /* Space below the label */
+  display: block;                    /* Block-level element */
+  padding-left: 4px;                 /* Padding for alignment */
+  letter-spacing: 0.5px;             /* Slight spacing between letters */
+  
+  background: linear-gradient(135deg, #574d55 , #2a2426 );
+  border-radius: 8px;                /* Rounded corners */
+  padding: 10px 14px;                /* Padding for better space around the text */
+  
+  /* Light shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  transition: all 0.3s ease;         /* Smooth transition for color and shadow */
+}
+
+

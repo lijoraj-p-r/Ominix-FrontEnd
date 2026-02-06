@@ -288,10 +288,15 @@
 .logo-image {
   width: 60px;
   height: 60px;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-md), var(--shadow-glow);
-  transition: all var(--transition-base);
+  border-radius: 22%;
+  object-fit: cover;
+  background-color: #fff;
+
+  transition:
+    transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .logo-container:hover .logo-image {
   box-shadow: var(--shadow-lg), var(--shadow-glow);
@@ -299,14 +304,25 @@
 }
 
 .logo-text {
-  font-size: 1.75rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.5px;
+  font-size: 2.75rem;                     /* Larger size for emphasis */
+  font-weight: 1000;                        /* Very bold text */
+  background: var(--gradient-primary);     /* Keep your existing gradient */
+  -webkit-background-clip: text;           /* Text clipping for gradient */
+  background-clip: text;                   /* Standard background clip for text */
+  -webkit-text-fill-color: transparent;    /* Make the text transparent to show gradient */
+  letter-spacing: -0.5px;                  /* Slightly tighter letter spacing for better fit */
+  
+  /* Adding a subtle shadow to enhance text visibility */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for readability */
+  
+  transition: text-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
+
+.logo-text:hover {
+  transform: scale(1.05);                  /* Slight scale-up effect on hover */
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for hover state */
+}
+
 
 .header-actions {
   display: flex;
@@ -501,7 +517,7 @@
   position: absolute;
   top: calc(100% + var(--spacing-sm));
   right: 0;
-  background: rgba(255, 255, 255, 0.98);
+  background: linear-gradient(135deg, #2b345e 0%, #37295e 100%);;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-xl);
@@ -510,7 +526,7 @@
   z-index: 1000;
   min-width: 180px;
   border: 1px solid rgba(99, 102, 241, 0.1);
-  animation: scaleIn 0.2s ease-out;
+  animation: scaleIn 0.4s ease-out;
 }
 
 .profile-dropdown:hover .dropdown-menu {

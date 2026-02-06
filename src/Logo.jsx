@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from './assets/ominix1_1.png'; // Import the image
+//import logo from './assets/image.png'; // Import the image
+import logo from './image.png'; // Import the image
 import './assets/styles.css'; // Import external CSS
 
 export default function Logo() {

@@ -1,100 +1,167 @@
 /* Modal overlay */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  /* Modal content container */
-  .modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-  }
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal content container */
+.modal-content {
+  width: 90%;
+  max-width: 800px;
+  max-height: 95%;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: var(--background-elevated, #101827);
+  border: 1px solid var(--border-color, #1f2933);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.25s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  color: var(--text-primary, #f9fafb);
+  overflow: hidden;
+}
+
+.modal-content h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.modal-content p {
+  color: var(--text-secondary, #9ca3af);
+  font-size: 14px;
+}
   
   /* Form styling */
-  .modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.modal-form-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.modal-form-item label {
+  min-width: 110px;
+  font-size: 14px;
+  color: var(--text-secondary, #9ca3af);
+}
+
+.modal-form input,
+.modal-form textarea,
+.modal-content input[type="number"],
+.modal-content input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color, #1f2933);
+  background: var(--background-card, #020617);
+  color: var(--text-primary, #f9fafb);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.modal-form input::placeholder,
+.modal-form textarea::placeholder {
+  color: var(--text-muted, #6b7280);
+}
+
+.modal-form input:focus,
+.modal-form textarea:focus,
+.modal-content input[type="number"]:focus,
+.modal-content input[type="text"]:focus {
+  border-color: var(--primary-color, #4f46e5);
+  box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.4);
+
+}
+
+.modal-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Buttons – scoped to modal only */
+.modal-content button {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.modal-content button:first-of-type {
+  background: linear-gradient(135deg, var(--primary-color, #4f46e5), var(--secondary-color, #7c3aed));
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+  min-height: 20px;
   
-  .modal-form input,
-  .modal-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .modal-form textarea {
-    resize: vertical;
-    height: 80px;
-  }
-  
-  /* Buttons */
-  button {
-    padding: 10px 15px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  button:last-child {
-    background: #6c757d;
-  }
-  
-  button:last-child:hover {
-    background: #5a6268;
-  }
+}
+
+.modal-content button:last-of-type {
+  background: var(--background-hover, #111827);
+  color: var(--text-secondary, #e5e7eb);
+  border: 1px solid var(--border-accent, #374151);
+  box-shadow: none;
+}
+
+.modal-content button:hover {
+  transform: translateY(-1px);
+}
+
+.modal-content button:first-of-type:hover {
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.55);
+}
+
+.modal-content button:last-of-type:hover {
+  background: #020617;
+}
   
   /* Product details */
-  .product-details {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .product-details img {
-    width: 200px;
-    height: 200px;
-    object-fit: scale-down;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .product-details div {
-    flex: 1;
-  }
-  
-  .product-details p {
-    margin: 5px 0;
-  }
+.product-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-details img {
+  width: 200px;
+  height: 200px;
+  object-fit: scale-down;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #1f2933);
+  background: radial-gradient(circle at 30% 20%, #111827, #020617);
+}
+
+.product-details div {
+  flex: 1;
+}
+
+.product-details p {
+  margin: 5px 0;
+}
   
   /* Animation */
   @keyframes fadeIn {
@@ -108,29 +175,39 @@
     }
   }
   
-  .modal-form-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
+.business-response-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 
-  .business-response-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
- .full-products{
+.full-products{
   display: flex;
   flex-direction: row;
   align-items: center;
-gap:25px;
+  gap: 25px;
+}
 
- }
- .product-details-info{
+.product-details-info{
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
 
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .modal-form-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .full-products {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

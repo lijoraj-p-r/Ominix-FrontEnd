@@ -123,7 +123,7 @@ export function SearchAndFilter({ onSearch, onFilter, onSort, currentCategory })
 
           {/* ↕️ SORT (FIXED) */}
           <div className="sort-section">
-            <label>Sort By</label>
+            <label className="filter-label">Sort By</label>
             <div className="sort-buttons">
               <button
                 type="button"

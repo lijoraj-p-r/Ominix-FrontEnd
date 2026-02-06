@@ -20,7 +20,12 @@
   /* Background Colors */
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
-  --bg-tertiary: #f1f5f9;
+  --bg-tertiary: linear-gradient(
+    135deg,
+    #4b4f6e 0%,    /* dark muted primary */
+    #4c4e77 50%,   /* slightly lighter muted mid-tone */
+    #806381 100%   /* soft muted accent */
+  );
   --bg-gradient: linear-gradient(135deg, #667eea15 0%, #764ba215 50%, #f093fb15 100%);
   
   /* Text Colors */
