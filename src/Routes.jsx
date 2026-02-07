@@ -6,7 +6,7 @@ import CustomerHomePage from "./CustomerHomePage";
 import CartPage from "./CartPage";
 import OrderPage from "./OrderPage";
 import WishlistPage from "./WishlistPage";
-import AboutUs from "./pages/AboutUs";
+import AboutUs from "./pages/AboutUs2";
 import Contact from "./pages/Contact";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";

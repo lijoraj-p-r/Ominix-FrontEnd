@@ -1,7 +1,7 @@
 /* ============================================
    SEARCH AND FILTER STYLES
    ============================================ */
-.search-filter-container {
+/* .search-filter-container {
   background: var(--bg-primary);
   padding: var(--spacing-lg);
   border-radius: var(--radius-xl);
@@ -9,7 +9,7 @@
   margin-bottom: var(--spacing-xl);
   border: 1px solid var(--border-color);
   
-}
+} */
 
 .search-section {
   display: flex;
@@ -66,7 +66,8 @@
 
 .filter-toggle {
   padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--bg-tertiary);
+  
+   background: var(--gradient-primary);
   border: 2px solid var(--border-color);
   border-radius: var(--radius-lg);
   font-size: 0.9rem;
@@ -77,18 +78,18 @@
 }
 
 .filter-toggle:hover {
-  background: var(--bg-secondary);
+ background: var(--bg-tertiary);
   border-color: var(--primary);
   transform: translateY(-2px);
 }
 
 .filters-section {
-  margin-top: var(--spacing-lg);
-  padding-top: var(--spacing-lg);
-  border-top: 2px solid var(--border-color);
+  /* margin-top: var(--spacing-lg);*/
+  padding-top: var(--spacing-lg); 
+  /* border-top: 2px solid var(--border-color); */
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: 10px;
   animation: fadeIn 0.3s ease-out;
 }
 
@@ -234,7 +235,7 @@
 .filter-label {
   font-size: 1.25rem;                /* Larger size for title */
   font-weight: 600;                  /* Slightly bold for emphasis */
-  margin-bottom: 12px;               /* Space below the label */
+  margin-bottom: 5px;               /* Space below the label */
   display: block;                    /* Block-level element */
   padding-left: 4px;                 /* Padding for alignment */
   letter-spacing: 0.5px;             /* Slight spacing between letters */
@@ -246,7 +247,6 @@
   /* Light shadow for depth */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
-  transition: all 0.3s ease;         /* Smooth transition for color and shadow */
 }
 
 

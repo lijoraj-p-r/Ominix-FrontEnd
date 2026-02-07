@@ -14,6 +14,8 @@ export function SearchAndFilter({ onSearch, onFilter, onSort, currentCategory })
   const handleSearch = (e) => {
     e.preventDefault();
     onSearch(searchTerm);
+    
+    
   };
 
   /* -------------------- PRICE RANGE -------------------- */
@@ -74,7 +76,7 @@ export function SearchAndFilter({ onSearch, onFilter, onSort, currentCategory })
           <div className="search-input-wrapper">
             <input
               type="text"
-              placeholder="Search products..."
+              placeholder="Search products, Brands and More..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="search-input"

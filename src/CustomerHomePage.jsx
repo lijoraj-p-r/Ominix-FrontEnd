@@ -6,7 +6,10 @@ import { Header } from './Header';
 import { SearchAndFilter } from './components/SearchAndFilter';
 import { ToastContainer } from './components/Toast';
 import { useToast } from './hooks/useToast';
+
 import './assets/styles.css';
+import BannerCarousel from './BannerCarousel';
+import { Shirt } from 'lucide-react';
 
 export default function CustomerHomePage() {
   const [products, setProducts] = useState([]);
@@ -20,6 +23,8 @@ export default function CustomerHomePage() {
   const [filterParams, setFilterParams] = useState({ minPrice: null, maxPrice: null });
   const [sortParams, setSortParams] = useState({ sortBy: '', sortOrder: 'asc' });
   const { toasts, removeToast, success, error: showError } = useToast();
+
+  const [isFilterActive, setIsFilterActive] = useState(false);
 
   useEffect(() => {
     fetchProducts();
@@ -98,6 +103,7 @@ export default function CustomerHomePage() {
   const handleFilter = (filter) => {
     setFilterParams(filter);
     fetchProducts(activeCategory, searchTerm, filter, sortParams);
+     setIsFilterActive(true);
   };
 
   const handleSort = (sortBy, sortOrder) => {
@@ -137,16 +143,22 @@ export default function CustomerHomePage() {
         cartCount={isCartLoading ? '...' : cartError ? 'Error' : cartCount}
         username={username}
       />
+
       <nav className="navigation">
         <CategoryNavigation onCategoryClick={handleCategoryClick} activeCategory={activeCategory} />
       </nav>
+      
       <main className="main-content">
-        <SearchAndFilter
-          onSearch={handleSearch}
-          onFilter={handleFilter}
-          onSort={handleSort}
-          currentCategory={activeCategory}
-        />
+    {  activeCategory != 'Shirts' && <SearchAndFilter
+  onSearch={handleSearch}
+  onFilter={handleFilter}
+  onSort={handleSort}
+  currentCategory={activeCategory}
+/>
+}
+
+{!isFilterActive && activeCategory === 'Shirts' && <BannerCarousel />}
+
         <ProductList products={products} onAddToCart={handleAddToCart} isLoading={isProductsLoading} />
       </main>
       <Footer />

@@ -20,7 +20,7 @@
   padding: var(--spacing-2xl);
 }
 
-.cart-page.empty h2 {
+.cart-page.empty h3 {
   font-size: 2rem;
   background: var(--gradient-primary);
   -webkit-background-clip: text;

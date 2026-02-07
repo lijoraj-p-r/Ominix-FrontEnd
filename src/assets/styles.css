@@ -439,6 +439,7 @@
   color: var(--text-secondary);
 }
 
+
 .cart-badge {
   position: absolute;
   top: -4px;
@@ -724,14 +725,16 @@
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
 }
-
 .product-name {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-family: "Inter", "Satoshi", "SF Pro Display", system-ui, sans-serif;
+  font-size: 1.25rem;          /* slightly bigger = confidence */
+  font-weight: 600;            /* cleaner than 700 */
+  color: #111827;              /* rich near-black (not harsh) */
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.35;
+  letter-spacing: -0.015em;    /* subtle luxury tightening */
 }
+
 
 .product-description {
   font-size: 0.875rem;
