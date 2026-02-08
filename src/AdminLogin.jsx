@@ -88,7 +88,7 @@ export default function LoginPage() {
           </form>
           <div className="form-footer">
             <a href="/" className="form-link">
-              Not Admin? Login As USer ! 
+              Not Admin? Login As User !
             </a>
           </div>
         </div>

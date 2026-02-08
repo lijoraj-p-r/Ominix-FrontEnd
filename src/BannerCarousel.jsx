@@ -17,7 +17,7 @@ const BannerCarousel = () => {
     },
     {
       id: 3,
-      image: 'https://rukminim2.flixcart.com/fk-p-flap/460/224/image/1ff697861aae60a9.png?q=20',
+      image: 'https://rukminim2.flixcart.com/fk-p-flap/1620/790/image/178294fb77acf1c9.png?q=80',
       link: '#slide-3'
     },
     {

@@ -91,7 +91,7 @@ export default function RegistrationPage() {
                 required
                 className={`form-input ${errors.username ? 'input-error' : ''}`}
               />
-              {errors.username && <small className="error-text">{errors.username}</small>}
+              {errors.username && <small className="error-text" >{errors.username}</small>}
             </div>
 
             {/* Email */}
@@ -135,7 +135,7 @@ export default function RegistrationPage() {
                 className={`form-select ${errors.role ? 'input-error' : ''}`}
               >
                 <option value="" disabled>Select your role</option>
-                <option value="CUSTOMER">Customer</option>
+                <option value="CUSTOMER" selected>Customer</option>
                 <option value="ADMIN">ADMIN</option>
               </select>
               {errors.role && <small className="error-text">{errors.role}</small>}
