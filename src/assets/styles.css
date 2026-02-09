@@ -526,7 +526,8 @@
   z-index: 1000;
   min-width: 180px;
   border: 1px solid rgba(99, 102, 241, 0.1);
-  animation: scaleIn 0.4s ease-out;
+animation: scaleIn 300ms ease-out;
+
 }
 
 .profile-dropdown:hover .dropdown-menu {
@@ -657,6 +658,7 @@
   gap: var(--spacing-xl);
   justify-content: center;
   padding: var(--spacing-lg) 0;
+  
 }
 
 .product-grid {
@@ -666,6 +668,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+ 
 }
 
 .product-card {
@@ -709,7 +712,7 @@
   height: 280px;
   object-fit: cover;
   border-radius: var(--radius-xl);
-  margin-bottom: var(--spacing-md);
+
   transition: transform var(--transition-slow);
   background: var(--bg-tertiary);
 }
@@ -738,7 +741,6 @@
 .product-description {
   font-size: 0.875rem;
   color: var(--text-secondary);
-  margin: var(--spacing-xs) 0;
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -998,6 +1000,11 @@
   color: var(--text-primary);
   margin: 0;
 }
+
+.order-details h3 {
+  color: black;
+}
+
 
 /* ============================================
    ADMIN DASHBOARD
